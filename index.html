@@ -28,12 +28,19 @@ body {
   padding-bottom: 40px;
   background-color: #f5f5f5;
 }
+      
+h1 {
+  padding:20%;
+}
+      
+.fa {
+  font-size:20px;
+}
     </style>
     <script>
 function init() {
   var files = 25;
   var pick = (Math.round(Math.min(files-1,Math.random()*files))+'').padStart(10, '0');
-  pick = '0000000000';
   fetch('data/'+pick)
   .then((resp) => resp.text())
   .then(function(data) {
