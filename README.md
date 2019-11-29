@@ -1,2 +1,1 @@
-# fact-supply.github.io
-Fact supply.
+# [fact.supply](https://fact.supply).
