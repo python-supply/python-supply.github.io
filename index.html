@@ -35,9 +35,11 @@ function init() {
   var pick = (Math.round(Math.min(files-1,Math.random()*files))+'').padStart(10, '0');
   pick = '0000000000';
   fetch('data/'+pick)
-  .then((resp) => resp.json())
+  .then((resp) => resp.text())
   .then(function(data) {
-      var html = data;
+      var lines = data.split("\n");
+      var fact_url = lines[Math.round(Math.random()*lines.length)].split("|");
+      var html = fact_url[0] + ' [<a href="' + fact_url[1] + '"><i class="fa fa-wikipedia-w"></i></a>]';
       document.getElementById("fact").innerHTML = html;
   })
 }
