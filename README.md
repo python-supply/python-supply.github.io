@@ -1,1 +1,1 @@
-# [fact.supply](https://fact.supply).
+# [fact.supply](https://fact.supply)
