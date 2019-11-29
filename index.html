@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="fact.supply">
+    <meta name="author" content="fact.supply">
+    <title>fact.supply</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+    </style>
+    <script>
+function init() {
+  var files = 25;
+  var pick = (Math.round(Math.min(files-1,Math.random()*files))+'').padStart(10, '0');
+  fetch('data/'+pick)
+  .then((resp) => resp.json()) // Transform the data into json
+  .then(function(data) {
+      var html = data;
+      document.getElementById("fact").innerHTML = html;
+  })
+}
+    </script>
+  </head>
+  <body class="text-center" onload="init();">
+      <h1 class="h3 mb-3 font-weight-normal" id="fact">Please sign in <a href="https://wikipedia.org"><i class="fa fa-wikipedia-w"></i></a></h2>
+  </body>
+</html>
