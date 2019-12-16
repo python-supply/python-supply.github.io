@@ -6,7 +6,6 @@
     <meta name="description" content="python.supply">
     <meta name="author" content="python.supply">
     <title>python.supply</title>
-    <meta http-equiv="refresh" content="0;url=https://github.com/python-supply"/>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153492261-3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -23,7 +22,209 @@
       newLink.href = 'data:image/png;base64,'+favIcon;
       docHead.appendChild(newLink);
     </script>
+    <script>
+      var articleData = [
+        {
+          "title": "Strings, Regular Expressions, and Text Data Analysis",
+          "summary": "Built-in string methods and regular expressions can be use creatively to implement scalable workflows that process and analyze text data. Explore these tools and peripheral techniques within the context of a use case involving a Wikipedia data set."
+        },
+        {
+          "title": "Higher-Order Functions and Decorators",
+          "summary": "Decorators deliver new forms of modularity and composability, helping you add features and functionalities in a quick, concise, and elegant way. Review their foundation (higher-order functions) and learn to use decorators in an illustrative use case."
+        }
+      ];
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Yanone+Kaffeesatz&family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+      html { height:100vh; }
+      body { display:flex; flex-direction:column; min-height:100vh; padding:0px 0px 0px 0px; }
+      @media (min-width: 768px) { html { font-size: 16px; } }
+      a { color:#E7752E; }
+      a:hover { text-decoration:none; color:#000000; }
+      #header { min-height:160px; margin-top:132px; }
+      .space { margin-top:80px; }
+      .container { max-width:960px; }
+      .prompt {
+        padding-top:4px; padding-right:6px; letter-spacing:-4px;
+        font-family:'Yanone Kaffeesatz',sans-serif; font-size:66px; font-weight:normal; color:#E7752E;
+      }
+      .logo { float:left; transform: skew(-7deg, 0deg); font-family:'Ubuntu',sans-serif; font-size:40px; font-weight:bold; }
+      .logo > table { border-bottom:0px; }
+      .logo > table span { letter-spacing:-2px; }
+      .logo > table .domain { padding-bottom:4px; }
+      hr { margin:4px 0px 4px 0px; margin-left:76px; margin-right:196px; background-color:#EEEEEE; }
+      h5 { margin-right:196px; margin-left:76px; font-size:18px; font-weight:normal; font-style:italic; color:#999999; }
+      .links { float:right; padding-top:10px; font-size:35px; }
+      .links a { margin:0px 2px 0px 2px; }
+      .links a + a { margin:0px 0px 0px 2px; }
+      .card-deck .card { border:0px; min-width:220px; }
+      .card { min-width:350px !important; }
+      .card-header {
+        min-height:60px;
+        border-bottom:0px;
+        padding:2px 20px 5px 20px;
+        background-color:#FFFFFF;
+        line-height:24px;
+        font-family:'Ubuntu',sans-serif;
+        font-size:22px;
+        color:#E7752E;
+      }
+      table { height:100%; width:100%; border-bottom:1px solid #E7752E; }
+      table td { width:75%; padding-bottom:5px; vertical-align:bottom; }
+      table td + td { width:25%; padding-bottom:5px; vertical-align:bottom; text-align:right; }
+      table i { margin:0px 0px 0px 8px; font-size:24px; }
+      .card-body {
+        padding:2px 20px 2px 20px;
+        text-align:justify;
+        line-height:18px;
+        font-family:'Ubuntu',sans-serif;
+        font-size:14px;
+      }
+      #articles { margin-bottom:60px; }
+      footer { width:100%; margin:auto auto 0 auto; padding:16px 0px 16px 0px; background-color:#E7752E; color:#FFFFFF; }
+      footer a { color:#FFFFFF; }
+      footer a:hover { text-decoration:underline; color:#FFFFFF; }
+      footer .card-deck { margin-bottom:0px !important; }
+      footer .card { margin-bottom:0px !important; border:0px; background-color:#E7752E; }
+      footer .card-deck-copyright { height:26x !important; font-size:10px; }
+      footer .card-copyright { height:26px !important; padding:0px 16px 0px 16px; font-size:12px !important; }
+      footer .card-body-links { padding:8px 20px 0px 20px; }
+      footer .card-body-links-internal { float:left; }
+      footer .card-body-links-external { float:right; }
+      footer .link { margin:0px 25px 0px 0px; white-space: nowrap; font-size:14px; }
+      footer .icon { margin:0px 15px 0px 0px; font-size:20px; }
+      footer .icon-last { margin:0px 0px 0px 0px; font-size:18px; }
+      .noselect {
+        -webkit-touch-callout:none; /* iOS Safari */
+          -webkit-user-select:none; /* Safari */
+           -khtml-user-select:none; /* Konqueror HTML */
+             -moz-user-select:none; /* Old versions of Firefox */
+              -ms-user-select:none; /* Internet Explorer/Edge */
+                  user-select:none; /* Non-prefixed version, currently
+                                       supported by Chrome, Edge, Opera and Firefox */
+      }
+      @media all and (max-width:900px) {
+        hr { margin-right:76px; }
+        h5 { margin-right:76px; }
+      }
+      @media all and (max-width:618px) {
+        #header { min-height:100px; height:100px; margin-top:50px; }
+        .space { display:none; }
+        hr { display:none; margin-right:0px; }
+        h5 { display:none; margin-right:0px; font-size:16px !important; }
+        #license-phrase { display:none; }
+      }
+      @media all and (max-width:400px) {
+        .prompt { display:none; }
+        .card { min-width:250px !important; }
+      }
+      @media all and (max-width:320px) {
+        .domain { font-size:32px; }
+        .title { font-size:18px; line-height:18px !important; }
+      }
+    </style>
   </head>
-  <body>
+  <body onload="articles();">
+    <div id="header" class="container">
+      <div class="card-deck mb-3">
+        <div class="card mb-4">
+          <div class="card-body noselect">
+            <div class="logo">
+              <table><tr>
+                <td><div class="prompt">&gt;&gt;&gt;</div></td>
+                <td><div class="domain"><span>python</span>.<span>supply</span></div></td>
+              </tr></table>
+            </div>
+            <br/><br/><hr/>
+            <h5>
+              Learn foundational topics in computer science, programming, and software engineering using the Python programming language.
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="container" id="articles"></div>
+    <footer>
+      <div class="container noselect">
+        <div class="card-deck mb-3">
+          <div class="card mb-4">
+            <div class="card-body card-body-links">
+              <div class="card-body-links-internal">
+                <span class="link"><span id="license-phrase">Made available under the </span><a href="http://opensource.org/licenses/mit-license.html">MIT License</a></span>
+                <span class="link"></span>
+              </div>
+              <div class="card-body-links-external">
+                <span class="icon"><a href="mailto:contact@python.supply"><i class="far fa-envelope"></i></a></span>
+                <span class="icon-last"><a href="https://github.com/python-supply"><i class="fab fa-github"></i></a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-deck mb-3 card-deck-copyright">
+          <div class="card mb-4 card-copyright">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script>
+      function article(entry) {
+        var divCard = document.createElement("div");
+        var divCardHeader = document.createElement("div");
+        var divCardBody = document.createElement("div");
+
+        divCard.classList.add("card");
+        divCard.classList.add("mb-4");
+        divCardHeader.classList.add("card-header");
+        divCardBody.classList.add("card-body");
+
+        var link = entry.title.replace(/,/g, "").replace(/ /g, "-").toLowerCase();
+
+        divCardHeader.innerHTML =
+          '<table><tr>' +
+            '<td>' +
+              '<a class="title" href="https://python.supply/' + link + '">' +
+                entry.title +
+              '</a>' +
+            '</td>' +
+            '<td>' +
+              '<a href="https://github.com/python-supply/' + link + '">' +
+                '<i class="fab fa-github"></i>' +
+              '</a>' +
+            '</td>' +
+          '</tr></table>';
+        divCardBody.innerHTML = entry.summary;
+
+        divCard.appendChild(divCardHeader);
+        divCard.appendChild(divCardBody);
+
+        return divCard;
+      }
+
+      function articles() {
+        var body = document.getElementsByTagName("body")[0];
+        for (var i = 0; i < Math.ceil(articleData.length / 2); i++) {
+          var divContainer = document.getElementById("articles");
+          var divCardDeck = document.createElement("div");
+          divCardDeck.classList.add("card-deck");
+          divCardDeck.classList.add("mb-3");
+
+          var divCardLeft = article(articleData[2 * i]);
+          var divCardRight = article(articleData[2 * i + 1]);
+          divCardDeck.appendChild(divCardLeft);
+          divCardDeck.appendChild(divCardRight);
+
+          divContainer.appendChild(divCardDeck);
+        }
+      }
+    </script>
   </body>
 </html>
