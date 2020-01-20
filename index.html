@@ -31,6 +31,10 @@
         {
           "title": "Higher-Order Functions and Decorators",
           "summary": "Decorators deliver new forms of modularity and composability, helping you add features and functionalities in a quick, concise, and elegant way. Review their foundation (higher-order functions) and learn to use decorators in an illustrative use case."
+        },
+        {
+          "title": "Map, Reduce, and Multiprocessing",
+          "summary": "Multiprocessing can be an effective way to speed up a time-consuming workflow via parallelization. This article illustrates how multiprocessing can be utilized in a concise way when implementing MapReduce-like workflows."
         }
       ];
     </script>
@@ -186,22 +190,24 @@
         divCardHeader.classList.add("card-header");
         divCardBody.classList.add("card-body");
 
-        var link = entry.title.replace(/,/g, "").replace(/ /g, "-").toLowerCase();
+        if (entry != null) {
+          var link = entry.title.replace(/,/g, "").replace(/ /g, "-").toLowerCase();
 
-        divCardHeader.innerHTML =
-          '<table><tr>' +
-            '<td>' +
-              '<a class="title" href="https://python.supply/' + link + '">' +
-                entry.title +
-              '</a>' +
-            '</td>' +
-            '<td>' +
-              '<a href="https://github.com/python-supply/' + link + '">' +
-                '<i class="fab fa-github"></i>' +
-              '</a>' +
-            '</td>' +
-          '</tr></table>';
-        divCardBody.innerHTML = entry.summary;
+          divCardHeader.innerHTML =
+            '<table><tr>' +
+              '<td>' +
+                '<a class="title" href="https://python.supply/' + link + '">' +
+                  entry.title +
+                '</a>' +
+              '</td>' +
+              '<td>' +
+                '<a href="https://github.com/python-supply/' + link + '">' +
+                  '<i class="fab fa-github"></i>' +
+                '</a>' +
+              '</td>' +
+            '</tr></table>';
+          divCardBody.innerHTML = entry.summary;
+        }
 
         divCard.appendChild(divCardHeader);
         divCard.appendChild(divCardBody);
@@ -218,7 +224,7 @@
           divCardDeck.classList.add("mb-3");
 
           var divCardLeft = article(articleData[2 * i]);
-          var divCardRight = article(articleData[2 * i + 1]);
+          var divCardRight = (i % 2 == 0) ? article(articleData[2 * i + 1]) : article();
           divCardDeck.appendChild(divCardLeft);
           divCardDeck.appendChild(divCardRight);
 
