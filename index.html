@@ -26,7 +26,7 @@
       var articleData = [
         {
           "title": "Strings, Regular Expressions, and Text Data Analysis",
-          "summary": "Built-in string methods and regular expressions can be use creatively to implement scalable workflows that process and analyze text data. Explore these tools and peripheral techniques within the context of a use case involving a Wikipedia data set."
+          "summary": "Built-in string methods and regular expressions can be used creatively to implement scalable workflows that process and analyze text data. Explore these tools and peripheral techniques within the context of a use case involving a Wikipedia data set."
         },
         {
           "title": "Higher-Order Functions and Decorators",
@@ -35,6 +35,10 @@
         {
           "title": "Map, Reduce, and Multiprocessing",
           "summary": "Multiprocessing can be an effective way to speed up a time-consuming workflow via parallelization. This article illustrates how multiprocessing can be utilized in a concise way when implementing MapReduce-like workflows."
+        },
+        {
+          "title": "Iterators, Generators, and Uncertainty",
+          "summary": "Iterators and generators are powerful and elegant abstractions that can help you work with data structures of an unknown or infinite size. Review how they are defined and conceptually related, and practice using them to manipulate data streams."
         }
       ];
     </script>
@@ -217,14 +221,16 @@
 
       function articles() {
         var body = document.getElementsByTagName("body")[0];
-        for (var i = 0; i < Math.ceil(articleData.length / 2); i++) {
+        for (var i = 0; i < articleData.length; i += 2) {
           var divContainer = document.getElementById("articles");
           var divCardDeck = document.createElement("div");
           divCardDeck.classList.add("card-deck");
           divCardDeck.classList.add("mb-3");
 
-          var divCardLeft = article(articleData[2 * i]);
-          var divCardRight = (i % 2 == 0) ? article(articleData[2 * i + 1]) : article();
+          var divCardLeft = article(articleData[i]);
+          var divCardRight =
+            (i + 1 < articleData.length) ?
+              article(articleData[i + 1]) : article();
           divCardDeck.appendChild(divCardLeft);
           divCardDeck.appendChild(divCardRight);
 
