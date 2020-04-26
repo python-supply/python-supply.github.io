@@ -40,6 +40,14 @@ h1 {
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153492261-1"></script>
     <script>
+var favIcon = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGfSURBVHjaYnz64hEDKQAggJgYSAQAAUSyBoAAFMtBEgAwBASwpfj/exXbOmdim1TDg4AAQ3a3u1eVCI4a8WUpb87ME0AszMzML14937BjEdwML6fwbftWAhnWJm5Hz+yCi4d4JYiKSAAEEBNQw4/v35Atff7iCYRx684NZPH3H94BFQMEECMklP7/B9n75+8fZiYmdnaOnz9/Al0FdMv3n9+ZmZj//fvLBDKZGagGIIBATnr79vXqrfOAHFtTj8OndyCbqiSrfe3GJQ5ukFJ9DUsrM3uAAAJ6mAloMET646f3aGEiwC8gIiwKYXNz87CwsAAEEMhJjIxM////A0ImZkYgGxg+TCAWAzBMgFxGhv9AAuxkkMsBAgioh/Xly2frdiyEGGOqa3/68kEgw83W12a2BERwRcADayNtRiY2oBaAAAI56ftPRCh9/PwBwvj29Qtc8MPnz////YWwAQKI8dnLx3///vn2/RvQVawsbMwsLMBQBpLsbOzffv7/+YeRmYmBm+0/GxsrRANAADGSmvgAAojktAQQQCRrAAgwAM59mIIvmO3ZAAAAAElFTkSuQmCC";
+var docHead = document.getElementsByTagName('head')[0];
+var newLink = document.createElement('link');
+newLink.rel = 'shortcut icon';
+newLink.type = 'image/x-icon';
+newLink.href = 'data:image/png;base64,'+favIcon;
+docHead.appendChild(newLink);
+
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
